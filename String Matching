@@ -1,0 +1,75 @@
+
+# include <stdio.h>
+# include <conio.h>
+# include <string.h>
+
+void main ()
+{
+	int  count;
+	char str[4][15], sub_str[4][15];
+	char pos[4][4];
+
+	int  x, i, j, k;
+	int  flag, ok;
+
+	clrscr();
+	printf("Total Number of Tests : ");
+	scanf("%d", &count);
+
+
+	for (x=0; x<count; x++)
+	{
+		fflush(stdin);
+
+		gets(str[x]);
+		gets(sub_str[x]);
+
+		ok=0;
+		for (i=0; str[x][i]!=NULL; i++)
+		{
+			flag = 0;
+			for (k=i,j=0; sub_str[x][j]!=NULL; k++,j++)
+			{
+				if (str[x][k] == sub_str[x][j])
+				{
+					flag = 1;
+				}
+				else
+				{
+					flag = 0;
+					break;
+				}
+			}
+
+			if (flag == 1)
+			{
+				ok = 1;
+			}
+		}
+
+		if (ok == 1)
+		{
+			strcpy (pos[x], "YES");
+		}
+		else
+		{
+			strcpy (pos[x], "NO");
+		}
+	}
+
+	clrscr();
+	printf("%d\n",count);
+	for (x=0; x<count; x++)
+	{
+		printf("%s\n", str[x]);
+		printf("%s\n\n", sub_str[x]);
+	}
+
+
+	for (x=0; x<count; x++)
+	{
+		printf("%s\n", pos[x]);
+	}
+
+	getch();
+}
