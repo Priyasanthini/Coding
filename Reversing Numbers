@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include<conio.h>
+#define MAX_SIZE 100
+
+void main()
+{
+    int arr[MAX_SIZE];
+    int size, i;
+
+	 clrscr();
+	 printf("Enter elements in array: \n");
+	 for(i=0; i<10; i++)
+	 {
+		  scanf("%d", &arr[i]);
+	 }
+
+	 printf("\nArray in reverse order: \n");
+	 for(i = 9; i>=0; i--)
+	 {
+		  printf("%d\n", arr[i]);
+	 }
+
+	 getch();
+
+}
